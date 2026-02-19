@@ -9,7 +9,7 @@ Este trabajo constituye la base fundamental para **investigaciones de doctorado 
 ### 📄 Licencia
 <div align="center">
   <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-    <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="CC BY-NC-SA 4.0" width="176" height="62">
+    <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="CC BY-NC-SA 4.0" width="120" height="40">
   </a>
 </div>
 
