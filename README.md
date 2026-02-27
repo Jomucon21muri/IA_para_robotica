@@ -6,7 +6,7 @@ La IA aplicada a robots no solo permite que ejecuten tareas programadas, sino qu
 
 Este trabajo constituye la base fundamental para **investigaciones de doctorado (PhD) centradas en la integración de la Inteligencia Artificial en robots de servicio**. El objetivo es avanzar en el desarrollo de sistemas robóticos autónomos capaces de operar eficientemente en entornos humanos, mejorando la interacción, adaptabilidad y rendimiento de los robots de servicio en aplicaciones del mundo real.
 
-## 🦾 Proyecto Principal: Robot Humanoide
+## Proyecto Principal: Robot Humanoide
 
 Este repositorio documenta el desarrollo completo de un **robot humanoide desde cero**, integrando:
 
@@ -29,14 +29,6 @@ Este repositorio documenta el desarrollo completo de un **robot humanoide desde 
   - Interacción por voz (español)
   - Aprendizaje y adaptación
 
-### 📋 Gestión del Proyecto
-
-Ver [00_Gestion_Proyecto/](00_Gestion_Proyecto/) para:
-- **Planificación anual**: Cronograma de 12 meses
-- **Cronograma semanal**: Estructura de 4 horas diarias
-- **Recursos y conocimientos**: 12 áreas de conocimiento necesarias
-- **Metodología**: Procesos de desarrollo
-
 ## 📂 Estructura del Proyecto
 
 ```
@@ -56,24 +48,6 @@ IA_para_robotica/
 └── 12_Etica_Seguridad/         # 🛡️ Seguridad, ética, normativas
 ```
 
-## 🎓 12 Pilares de Conocimiento
-
-La construcción del robot humanoide requiere dominio en 12 áreas:
-
-1. **Mecánica y Diseño Mecánico** → [08_Integracion_Hardware/](08_Integracion_Hardware/)
-2. **Electrónica y Electricidad** → [08_Integracion_Hardware/](08_Integracion_Hardware/)
-3. **Programación y Control** → [04_Control/](04_Control/), [03_Planificacion/](03_Planificacion/)
-4. **Mecatrónica** → [08_Integracion_Hardware/](08_Integracion_Hardware/)
-5. **Diseño de Software** → [09_Comunicaciones_Interfaces/](09_Comunicaciones_Interfaces/)
-6. **Inteligencia Artificial y ML** → [05_Aprendizaje_Maquina/](05_Aprendizaje_Maquina/)
-7. **Materiales y Fabricación** → [08_Integracion_Hardware/](08_Integracion_Hardware/)
-8. **Baterías y Energía** → [08_Integracion_Hardware/](08_Integracion_Hardware/)
-9. **Diseño Ergonómico y Biomecánica** → [04_Control/](04_Control/)
-10. **Comunicación y Redes** → [09_Comunicaciones_Interfaces/](09_Comunicaciones_Interfaces/)
-11. **Seguridad y Ética** → [12_Etica_Seguridad/](12_Etica_Seguridad/)
-12. **Gestión de Proyectos** → [00_Gestion_Proyecto/](00_Gestion_Proyecto/)
-
-Ver guía completa en [recursos_conocimientos.md](00_Gestion_Proyecto/recursos_conocimientos.md).
 
 ## 🚀 Getting Started
 
@@ -110,27 +84,6 @@ pip install -r requirements.txt
 # Configurar ROS (si aplica)
 source /opt/ros/noetic/setup.bash
 ```
-
-### Primeros Pasos
-
-1. **Revisar planificación**: Leer [00_Gestion_Proyecto/README.md](00_Gestion_Proyecto/README.md)
-2. **Estudiar conocimientos**: Ver [recursos_conocimientos.md](00_Gestion_Proyecto/recursos_conocimientos.md)
-3. **Fase actual**: Revisar en qué fase del proyecto estamos
-4. **Empezar a construir**: Seguir guías en carpetas específicas
-
-## 📅 Cronograma del Proyecto (12 Meses)
-
-| Fase | Meses | Enfoque Principal |
-|------|-------|-------------------|
-| **Fase 1: Planificación** | 1-2 | Definición, diseño conceptual, recursos |
-| **Fase 2: Diseño y Prototipado** | 3-4 | CAD, circuitos, simulación |
-| **Fase 3: Construcción** | 5-6 | Fabricación, ensamblaje, electrónica |
-| **Fase 4: Software y IA** | 7-8 | Programación, sensores, IA básica |
-| **Fase 5: Integración** | 9-10 | Integración completa, pruebas |
-| **Fase 6: Optimización** | 11-12 | Ajustes, documentación, entrega |
-
-Ver cronograma detallado en [planificacion_anual.md](00_Gestion_Proyecto/planificacion_anual.md).
-
 ## 🛠️ Tecnologías Utilizadas
 
 **Mecánica**:
@@ -152,57 +105,6 @@ Ver cronograma detallado en [planificacion_anual.md](00_Gestion_Proyecto/planifi
 
 **Control de versiones**:
 - Git, GitHub
-
-## 🎯 Objetivos del Proyecto
-
-### Corto Plazo (Meses 1-4)
-- [x] Definir alcance y planificación
-- [ ] Completar diseño CAD completo
-- [ ] Validar diseño en simulación
-- [ ] Adquirir componentes principales
-
-### Medio Plazo (Meses 5-8)
-- [ ] Fabricar y ensamblar estructura
-- [ ] Integrar electrónica básica
-- [ ] Implementar control de articulaciones
-- [ ] Desarrollar percepción básica
-
-### Largo Plazo (Meses 9-12)
-- [ ] Integración completa de sistemas
-- [ ] Locomoción estable
-- [ ] Interacción por voz
-- [ ] Reconocimiento de objetos
-- [ ] Documentación completa
-
-## 📊 Estado Actual
-
-**Fase actual**: Planificación (Mes 1)
-
-**Completado**:
-- ✅ Estructura del proyecto definida
-- ✅ Documentación de gestión creada
-- ✅ Recursos de conocimiento compilados
-- ✅ Cronograma anual establecido
-
-**En progreso**:
-- 🔄 Diseño conceptual CAD
-- 🔄 Selección de componentes
-- 🔄 Presupuesto detallado
-
-**Próximo**:
-- ⏭️ Diseño mecánico detallado
-- ⏭️ Esquemas electrónicos
-- ⏭️ Simulación de movimiento
-
-## 🤝 Contribuciones
-
-Este es un proyecto académico de investigación para doctorado. Si deseas contribuir o colaborar:
-
-1. Fork el repositorio
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
 
 ## ⚠️ Seguridad
 
