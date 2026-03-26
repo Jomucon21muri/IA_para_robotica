@@ -1,4 +1,4 @@
-# 🤖 Inteligencia Artificial para Robots - PIyPFP  
+# 🤖 Protecto de robot inteligente - PIyPFP  
 
 Este proyecto tiene como objetivo explorar, diseñar e implementar modelos de Inteligencia Artificial aplicados a la robótica humanoide, integrando todos los elementos de control necesarios para que los robots puedan percibir, razonar, decidir y actuar en entornos dinámicos.
 
