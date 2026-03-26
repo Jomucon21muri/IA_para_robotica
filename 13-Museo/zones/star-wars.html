@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo Star Wars - Museo Virtual</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .starwars-hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1472457897821-70d3819a0e24?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            /* Placeholder star background */
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            text-align: center;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            box-shadow: 0 0 30px rgba(37, 99, 235, 0.2);
+        }
+
+        .comparison-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 5rem;
+            background: rgba(30, 41, 59, 0.4);
+            padding: 3rem;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .comparison-section:nth-child(even) {
+            direction: rtl;
+            /* Switch order for visual variety */
+        }
+
+        .comparison-section:nth-child(even)>* {
+            direction: ltr;
+            /* Reset text direction */
+        }
+
+        .tech-highlight {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .real-world-tag {
+            background: rgba(37, 99, 235, 0.2);
+            color: #93c5fd;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            border: 1px solid rgba(37, 99, 235, 0.4);
+        }
+
+        .detail-text {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .icon-large {
+            font-size: 5rem;
+            display: block;
+            text-align: center;
+            filter: drop-shadow(0 0 15px rgba(96, 165, 250, 0.5));
+        }
+
+        @media (max-width: 768px) {
+            .comparison-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                direction: ltr !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Universo Star Wars</h1>
+        <p class="subtitle">Cuando la Ciencia Ficción inspira la Realidad</p>
+        <a href="../index.html" class="btn-explore" style="margin-top: 1rem;">← Volver al Mapa</a>
+    </header>
+
+    <main>
+        <section class="starwars-hero">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: #fff;">De la Pantalla al Laboratorio</h2>
+            <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; color: #e2e8f0;">
+                George Lucas no solo creó una saga cinematográfica; esbozó un futuro donde humanos y máquinas coexisten.
+                Hoy, ingenieros de todo el mundo trabajan para hacer realidad a los droides que amamos.
+            </p>
+        </section>
+
+        <!-- R2-D2 Section -->
+        <article class="comparison-section">
+            <div>
+                <h3 class="tech-highlight">
+                    Astromech (R2-D2)
+                    <span class="real-world-tag">Realidad: Cobots & Robots de Servicio</span>
+                </h3>
+                <p class="detail-text">
+                    R2-D2 es la navaja suiza definitiva: repara naves, hackea sistemas y asiste en combate. En el mundo
+                    real, este concepto vive en los <strong>Cobots (Robots Colaborativos)</strong>.
+                </p>
+                <p class="detail-text">
+                    Al igual que R2, los robots modernos de almacén (como los de Amazon/Kiva) navegan autónomamente, y
+                    los robots de desactivación de explosivos salvan vidas humanas realizando tareas peligrosas.
+                </p>
+                <ul style="list-style: none; color: var(--secondary-color);">
+                    <li>✅ Navegación Autónoma SLAM</li>
+                    <li>✅ Interfaz Universal (puertos de datos)</li>
+                    <li>✅ Asistencia técnica versátil</li>
+                </ul>
+            </div>
+            <div style="text-align: center;">
+                <span class="icon-large">🤖</span>
+                <p style="margin-top: 1rem; color: #64748b;">"Beep Boop Beep"</p>
+            </div>
+        </article>
+
+        <!-- C-3PO Section -->
+        <article class="comparison-section">
+            <div style="text-align: center;">
+                <span class="icon-large">🗣️</span>
+                <p style="margin-top: 1rem; color: #64748b;">"Relaciones Cibernéticas Humanas"</p>
+            </div>
+            <div>
+                <h3 class="tech-highlight">
+                    Protocolo (C-3PO)
+                    <span class="real-world-tag">Realidad: LLMs & Humanoides</span>
+                </h3>
+                <p class="detail-text">
+                    C-3PO domina 6 millones de formas de comunicación. Hoy, los <strong>Grandes Modelos de Lenguaje
+                        (LLMs)</strong> como GPT-4 acercan esa capacidad, permitiendo traducción en tiempo real y
+                    comprensión del contexto.
+                </p>
+                <p class="detail-text">
+                    Físicamente, robots como <strong>Ameca</strong> (Engineered Arts) o <strong>Sophia</strong> (Hanson
+                    Robotics) replican la gesticulación humana, aunque todavía luchamos contra el "Valle Inquietante"
+                    (Uncanny Valley) que C-3PO evita con su diseño dorado y rígido.
+                </p>
+            </div>
+        </article>
+
+        <!-- BB-8 Section -->
+        <article class="comparison-section">
+            <div>
+                <h3 class="tech-highlight">
+                    Física de BB-8
+                    <span class="real-world-tag">Realidad: Propulsión Holonómica</span>
+                </h3>
+                <p class="detail-text">
+                    Cuando BB-8 apareció, muchos pensaron que era CGI. En realidad, utiliza un sistema de
+                    <strong>propulsión esférica</strong> controlado por giroscopios internos, permitiendo movimiento
+                    omnidireccional.
+                </p>
+                <p class="detail-text">
+                    Esta tecnología se estudia hoy para vehículos de exploración espacial (Rovers) que necesitan moverse
+                    en terrenos difíciles sin atascarse, similar a la tecnología comercializada por la empresa
+                    <strong>Sphero</strong>.
+                </p>
+            </div>
+            <div style="text-align: center;">
+                <span class="icon-large">⚽</span>
+                <p style="margin-top: 1rem; color: #64748b;">Movimiento Esférico</p>
+            </div>
+        </article>
+
+        <!-- Bionics Section -->
+        <article class="comparison-section">
+            <div style="text-align: center;">
+                <span class="icon-large">🦾</span>
+                <p style="margin-top: 1rem; color: #64748b;">Prótesis Sensoriales</p>
+            </div>
+            <div>
+                <h3 class="tech-highlight">
+                    La Mano de Luke
+                    <span class="real-world-tag">Realidad: Biónica Avanzada</span>
+                </h3>
+                <p class="detail-text">
+                    La mano robótica que recibe Luke Skywalker siente el tacto. Esto es el "Santo Grial" de la biónica
+                    moderna: la <strong>retroalimentación háptica</strong>.
+                </p>
+                <p class="detail-text">
+                    Proyectos como el <strong>Brazo DEKA</strong> (financiado por DARPA) y las interfaces neuronales
+                    permiten a amputados controlar dedos robóticos con la mente y, recientemente, empezar a "sentir"
+                    texturas a través de estimulación nerviosa.
+                </p>
+            </div>
+        </article>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Museo Virtual de Robótica e IA.</p>
+    </footer>
+</body>
+
+</html>

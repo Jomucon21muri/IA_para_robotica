@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine y Robótica del Futuro - Museo Virtual</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .cinema-hero {
+            background: linear-gradient(rgba(10, 10, 20, 0.9), rgba(10, 10, 20, 0.8)), url('https://images.unsplash.com/photo-1535378437327-1e16e62f5596?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            /* Placeholder cyber/future bg */
+            background-size: cover;
+            background-position: center;
+            padding: 6rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 4rem;
+            text-align: center;
+            border: 1px solid rgba(188, 19, 254, 0.3);
+            box-shadow: 0 0 40px rgba(188, 19, 254, 0.2);
+        }
+
+        .timeline-section {
+            position: relative;
+            margin-bottom: 5rem;
+            padding-left: 2rem;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        .movie-card {
+            background: linear-gradient(90deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.3) 100%);
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 0 15px 15px 0;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .movie-card::before {
+            content: '🎥';
+            position: absolute;
+            left: -3.4rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--bg-color);
+            border: 2px solid var(--secondary-color);
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .movie-card:hover {
+            margin-left: 1rem;
+            background: rgba(30, 41, 59, 0.8);
+            border-color: var(--secondary-color);
+        }
+
+        .movie-year {
+            background: var(--secondary-color);
+            color: #fff;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 1rem;
+            vertical-align: middle;
+        }
+
+        .ethics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .ethics-card {
+            background: rgba(20, 20, 40, 0.6);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-top: 4px solid var(--primary-color);
+            text-align: center;
+        }
+
+        .ethics-card h3 {
+            color: #e2e8f0;
+            margin-bottom: 1rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Cine y Futuro</h1>
+        <p class="subtitle">Espejos de metal, sueños humanos</p>
+        <a href="../index.html" class="btn-explore" style="margin-top: 1rem;">← Volver al Mapa</a>
+    </header>
+
+    <main>
+        <section class="cinema-hero">
+            <h2 style="font-size: 3rem; margin-bottom: 1rem; color: #fff; text-shadow: 0 0 20px #bc13fe;">Visiones del
+                Mañana</h2>
+            <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; color: #e2e8f0;">
+                El cine no solo entretiene; explora nuestros miedos y esperanzas frente a la creación de vida
+                artificial.
+                ¿Serán nuestros salvadores o nuestros conquistadores?
+            </p>
+        </section>
+
+        <!-- Timeline of Robots in Cinema -->
+        <h2 class="zone-title" style="border-bottom: 2px solid var(--secondary-color); padding-bottom: 1rem;">Evolución
+            en Pantalla</h2>
+        <div class="timeline-section">
+            <article class="movie-card">
+                <h3><span class="movie-year">1927</span> Metrópolis (María)</h3>
+                <p style="color: #cbd5e1; margin-top: 0.5rem;">
+                    El primer robot icónico del cine. Una "Maschinenmensch" creada para sembrar el caos, estableciendo
+                    el tropo del robot como una fuerza disruptiva y engañosa.
+                </p>
+            </article>
+
+            <article class="movie-card">
+                <h3><span class="movie-year">1968</span> 2001: Odisea del Espacio (HAL 9000)</h3>
+                <p style="color: #cbd5e1; margin-top: 0.5rem;">
+                    La IA fría y calculadora. HAL no odia a los humanos, simplemente prioriza la misión sobre la vida de
+                    la tripulación, planteando el problema de la <strong>alineación de objetivos</strong>.
+                </p>
+            </article>
+
+            <article class="movie-card">
+                <h3><span class="movie-year">1982</span> Blade Runner (Replicantes)</h3>
+                <p style="color: #cbd5e1; margin-top: 0.5rem;">
+                    "Más humano que lo humano". Cuestiona qué significa tener alma. ¿Si una máquina sufre, ama y teme la
+                    muerte, merece derechos?
+                </p>
+            </article>
+
+            <article class="movie-card">
+                <h3><span class="movie-year">2014</span> Ex Machina (Ava)</h3>
+                <p style="color: #cbd5e1; margin-top: 0.5rem;">
+                    La IA manipuladora. Ava utiliza su inteligencia emocional para engañar a su creador y a su
+                    evaluador, demostrando los peligros de una <strong>Superinteligencia</strong> confinada.
+                </p>
+            </article>
+        </div>
+
+        <!-- Ethical Dilemmas -->
+        <h2 class="zone-title" style="border-bottom: 2px solid var(--primary-color); padding-bottom: 1rem;">Dilemas
+            Éticos y Futuros</h2>
+        <div class="ethics-grid">
+            <article class="ethics-card">
+                <span style="font-size: 3rem; display: block; margin-bottom: 1rem;">⚖️</span>
+                <h3>Las leyes de Asimov hoy</h3>
+                <p style="color: #94a3b8;">
+                    Las Tres Leyes son ficción, pero plantean problemas reales. ¿Cómo programamos moralidad en un coche
+                    autónomo que debe elegir entre dos accidentes? (El dilema del tranvía).
+                </p>
+            </article>
+
+            <article class="ethics-card">
+                <span style="font-size: 3rem; display: block; margin-bottom: 1rem;">🤝</span>
+                <h3>Relación Humano-Robot</h3>
+                <p style="color: #94a3b8;">
+                    Desde el compañerismo (Her, Star Wars) hasta el conflicto (Terminator). A medida que los robots
+                    entran en hogares como cuidadores, ¿cómo afectará esto a nuestra psicología social?
+                </p>
+            </article>
+
+            <article class="ethics-card">
+                <span style="font-size: 3rem; display: block; margin-bottom: 1rem;">🚀</span>
+                <h3>Singularidad y Transhumanismo</h3>
+                <p style="color: #94a3b8;">
+                    El punto hipotético donde la IA supera la inteligencia humana y se auto-mejora recursivamente. ¿Nos
+                    fusionaremos con ellas (Neurolink) o quedaremos obsoletos?
+                </p>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Museo Virtual de Robótica e IA.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala de Historia - Museo Virtual</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .hub-intro {
+            background: rgba(10, 10, 32, 0.9);
+            padding: 3rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .hub-title {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .door-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .door {
+            background: var(--surface-color);
+            border: 2px solid var(--primary-color);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: block;
+            height: 100%;
+        }
+
+        .door:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.3);
+            background: rgba(0, 243, 255, 0.1);
+        }
+
+        .door-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .door-title {
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        .door::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            width: 80%;
+            height: 5px;
+            background: var(--secondary-color);
+            box-shadow: 0 0 10px var(--secondary-color);
+        }
+
+        /* Flowchart Styles */
+        .flow-container {
+            padding: 2rem;
+            margin: 3rem 0;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 15px;
+            overflow-x: auto;
+        }
+
+        .flow-level {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .flow-node {
+            background: rgba(30, 41, 59, 0.8);
+            border: 2px solid var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            position: relative;
+            z-index: 2;
+            min-width: 180px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.2);
+        }
+
+        .flow-node.root {
+            border-color: #64748b;
+            color: #cbd5e1;
+        }
+
+        .flow-node.mid {
+            border-color: var(--primary-color);
+        }
+
+        .flow-node.target {
+            border-color: var(--secondary-color);
+            background: rgba(188, 19, 254, 0.2);
+            box-shadow: 0 0 20px rgba(188, 19, 254, 0.4);
+        }
+
+        /* Connector Lines (Simple CSS Implementation) */
+        .connector-vertical {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            width: 2px;
+            height: 3rem;
+            background: #475569;
+            z-index: 1;
+        }
+
+        .flow-arrow {
+            font-size: 1.5rem;
+            color: #475569;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .convergence-box {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .convergence-line {
+            height: 30px;
+            width: 1px;
+            background: #64748b;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .flow-level {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .convergence-line {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Sala Común de Historia</h1>
+        <p class="subtitle">La Convergencia de las Tecnologías</p>
+        <a href="../index.html" class="btn-explore" style="margin-top: 1rem;">← Volver al Mapa Principal</a>
+    </header>
+
+    <main>
+        <section class="hub-intro">
+            <h2 class="hub-title">Árbol de Evolución Tecnológica</h2>
+            <p>Visualiza cómo las disciplinas fundamentales han convergido para crear la inteligencia artificial y
+                robótica moderna.</p>
+
+            <!-- Flowchart Diagram -->
+            <div class="flow-container">
+                <!-- Level 1: Foundations -->
+                <h3 style="text-align:center; color:#64748b; margin-bottom:1rem;">FUNDAMENTOS</h3>
+                <div class="flow-level">
+                    <div class="flow-node root">Física & Electricidad</div>
+                    <div class="flow-node root">Matemáticas & Lógica</div>
+                </div>
+
+                <div class="convergence-line"
+                    style="height: 40px; width: 100%; border-top: 2px solid #64748b; border-left: 2px solid #64748b; border-right: 2px solid #64748b; background: transparent; width: 50%; margin: 0 auto;">
+                </div>
+                <div class="convergence-line" style="height: 20px;"></div>
+
+                <!-- Level 2: Core Disciplines -->
+                <h3 style="text-align:center; color:var(--primary-color); margin-bottom:1rem;">DISCIPLINAS BASE</h3>
+                <div class="flow-level">
+                    <div class="convergence-box">
+                        <div style="text-align:center">
+                            <div class="flow-node mid">Historia Electrónica</div>
+                            <p style="font-size:0.8rem; margin-top:0.5rem; color:#94a3b8;">Transistores,
+                                Sensores,<br>Actuadores</p>
+                        </div>
+                        <div style="text-align:center">
+                            <div class="flow-node mid">Historia Programación</div>
+                            <p style="font-size:0.8rem; margin-top:0.5rem; color:#94a3b8;">Algoritmos,
+                                Lógica,<br>Control</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flow-arrow">▼ Convergencia ▼</div>
+
+                <!-- Level 3: Integration -->
+                <h3 style="text-align:center; color:var(--secondary-color); margin-bottom:1rem;">INTEGRACIÓN</h3>
+                <div class="flow-level">
+                    <div class="convergence-box">
+                        <div style="text-align:center">
+                            <div class="flow-node mid">Robótica (Cuerpo)</div>
+                            <p style="font-size:0.8rem; margin-top:0.5rem; color:#94a3b8;">Mecatrónica + Control</p>
+                        </div>
+                        <div style="text-align:center">
+                            <div class="flow-node mid">IA (Mente)</div>
+                            <p style="font-size:0.8rem; margin-top:0.5rem; color:#94a3b8;">Machine Learning + Datos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flow-arrow">▼</div>
+
+                <!-- Level 4: The Future -->
+                <div class="flow-level">
+                    <div class="flow-node target">Robótica Autónoma Moderna</div>
+                </div>
+                <p style="text-align: center; color: #cbd5e1;">(Boston Dynamics, Coches Autónomos, Humanoides)</p>
+            </div>
+
+            <!-- Detailed Text -->
+            <h2 class="hub-title" style="margin-top: 4rem;">La Gran Convergencia</h2>
+            <p>A día de hoy, estas cuatro ramas son inseparables:</p>
+
+            <h3 style="color:var(--primary-color); margin-top:2rem;">1. IA + Programación</h3>
+            <p>El software es el lenguaje, la IA es el mensaje. Python y C++ son las herramientas que permiten crear
+                redes neuronales.</p>
+
+            <h3 style="color:var(--primary-color); margin-top:1.5rem;">2. Electrónica + Robótica</h3>
+            <p>El hardware ejecuta la visión. Sin giroscopios y servos (Electrónica), un robot es solo una escultura
+                estática.</p>
+
+            <h3 style="color:var(--primary-color); margin-top:1.5rem;">3. Robótica + IA = Autonomía</h3>
+            <p>Cuando el "cuerpo" (Robot) recibe una "mente" (IA), nace la verdadera autonomía. Vehículos que ven y
+                deciden.</p>
+        </section>
+
+        <h2 style="text-align:center; font-family:'Orbitron'; margin-bottom:2rem;">Explora las Salas de Historia</h2>
+
+        <div class="door-grid">
+            <a href="robotics-history.html" class="door">
+                <span class="door-icon">🤖</span>
+                <h3 class="door-title">Historia de la Robótica</h3>
+                <p style="color:#aaa; margin-top:1rem;">El Cuerpo: De mitos a máquinas.</p>
+            </a>
+
+            <a href="electronics-history.html" class="door">
+                <span class="door-icon">⚡</span>
+                <h3 class="door-title">Historia de la Electrónica</h3>
+                <p style="color:#aaa; margin-top:1rem;">El Sistema Nervioso: Del ámbar al chip.</p>
+            </a>
+
+            <a href="programming-history.html" class="door">
+                <span class="door-icon">💻</span>
+                <h3 class="door-title">Historia de la Programación</h3>
+                <p style="color:#aaa; margin-top:1rem;">El Lenguaje: De Ada al Código.</p>
+            </a>
+
+            <a href="ai-history.html" class="door">
+                <span class="door-icon">🧠</span>
+                <h3 class="door-title">Historia de la IA</h3>
+                <p style="color:#aaa; margin-top:1rem;">La Mente: De la lógica al aprendizaje.</p>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Museo Virtual de Robótica e IA.</p>
+    </footer>
+</body>
+
+</html>

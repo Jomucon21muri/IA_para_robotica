@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia de la Programación - Museo Virtual</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            padding: 4rem 0;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            box-shadow: 0 0 15px var(--primary-color);
+        }
+
+        .timeline-card {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-card::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--secondary-color);
+            border: 4px solid var(--bg-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 10px var(--secondary-color);
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid rgba(30, 41, 59, 0.8);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent rgba(30, 41, 59, 0.8);
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid rgba(30, 41, 59, 0.8);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent rgba(30, 41, 59, 0.8) transparent transparent;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .content-box {
+            padding: 20px 30px;
+            background: rgba(30, 41, 59, 0.8);
+            position: relative;
+            border-radius: 15px;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease;
+        }
+
+        .content-box:hover {
+            transform: scale(1.02);
+            border-color: var(--primary-color);
+        }
+
+        .year-tag {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .person-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .citation {
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            font-style: italic;
+            margin-top: 10px;
+            display: block;
+        }
+
+        @media screen and (max-width: 600px) {
+            .timeline-container::after {
+                left: 31px;
+            }
+
+            .timeline-card {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-card::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            .left::after,
+            .right::after {
+                left: 21px;
+            }
+
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Cronografía de la Programación</h1>
+        <p class="subtitle">El Lenguaje de las Máquinas</p>
+        <a href="history-hub.html" class="btn-explore" style="margin-top: 1rem;">← Volver a la Sala Común</a>
+    </header>
+
+    <main>
+        <div class="timeline-container">
+
+            <!-- 1843 -->
+            <div class="timeline-card left">
+                <div class="content-box">
+                    <span class="year-tag">1843</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Ada+Lovelace+Notas" alt="Ada Lovelace"
+                        class="person-img">
+                    <h3>El Primer Algoritmo</h3>
+                    <p><strong>Ada Lovelace</strong>, traduciendo una memoria sobre la Máquina Analítica de Charles
+                        Babbage, añadió sus propias notas (Nota G). Allí describió un algoritmo para calcular los
+                        números de Bernoulli. Fue la primera en vislumbrar que las máquinas podrían manipular símbolos y
+                        crear cualquier cosa, incluso música.</p>
+                    <span class="citation">Figura Clave: Ada Lovelace (La Encantadora de Números).</span>
+                </div>
+            </div>
+
+            <!-- 1936 -->
+            <div class="timeline-card right">
+                <div class="content-box">
+                    <span class="year-tag">1936</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Alan+Turing+Maquina" alt="Alan Turing"
+                        class="person-img">
+                    <h3>La Máquina Universal</h3>
+                    <p><strong>Alan Turing</strong> formalizó el concepto de algoritmo con su "Máquina de Turing": un
+                        dispositivo teórico que lee y escribe símbolos en una cinta. Demostró que una máquina universal
+                        podría computar cualquier cosa que sea computable, sentando la base matemática de todo el
+                        software moderno.</p>
+                    <span class="citation">Figura Clave: Alan Turing (Padre de la Ciencia de la Computación).</span>
+                </div>
+            </div>
+
+            <!-- 1945 -->
+            <div class="timeline-card left">
+                <div class="content-box">
+                    <span class="year-tag">1945 - 1952</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Grace+Hopper+Compiler" alt="Grace Hopper"
+                        class="person-img">
+                    <h3>Compiladores y 'Bugs'</h3>
+                    <p>La Contraalmirante <strong>Grace Hopper</strong> desarrolló el primer compilador (A-0 System),
+                        permitiendo escribir código en lenguajes "humanos" en lugar de código máquina. También
+                        popularizó el término "bug" tras encontrar una polilla real en un relé del Mark II.</p>
+                    <span class="citation">Figura Clave: Grace Hopper (La Madre de COBOL).</span>
+                </div>
+            </div>
+
+            <!-- 1957 -->
+            <div class="timeline-card right">
+                <div class="content-box">
+                    <span class="year-tag">1957 - 1959</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Codigo+Fortran" alt="Codigo Antiguo"
+                        class="person-img">
+                    <h3>Lenguajes de Alto Nivel</h3>
+                    <p>John Backus (IBM) creó <strong>FORTRAN</strong> para cálculo científico, el primer gran lenguaje
+                        de alto nivel. Poco después nació <strong>LISP</strong> (John McCarthy) para la IA,
+                        introduciendo la recursividad y el manejo de listas, conceptos aún vitales hoy.</p>
+                    <span class="citation">Figuras Clave: John Backus, John McCarthy.</span>
+                </div>
+            </div>
+
+            <!-- 1972 -->
+            <div class="timeline-card left">
+                <div class="content-box">
+                    <span class="year-tag">1972</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Dennis+Ritchie+C" alt="Terminal Unix"
+                        class="person-img">
+                    <h3>El Lenguaje C y UNIX</h3>
+                    <p><strong>Dennis Ritchie</strong> creó el lenguaje <strong>C</strong> en los Laboratorios Bell para
+                        reescribir el sistema operativo UNIX. C se convirtió en el "latín" de la programación moderna;
+                        casi todos los sistemas operativos y lenguajes actuales (C++, Java, Python, Windows, Linux) se
+                        construyen sobre sus cimientos.</p>
+                    <span class="citation">Figura Clave: Dennis Ritchie (Creador de C).</span>
+                </div>
+            </div>
+
+            <!-- 1991 -->
+            <div class="timeline-card right">
+                <div class="content-box">
+                    <span class="year-tag">1991</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Linus+Torvalds+Linux" alt="Pinguino Tux"
+                        class="person-img">
+                    <h3>La Revolución Open Source</h3>
+                    <p>El estudiante <strong>Linus Torvalds</strong> lanzó el núcleo Linux como software libre.
+                        Simultáneamente, Tim Berners-Lee creaba el <strong>HTML</strong> y la Web. Comienza la era de la
+                        colaboración global masiva y el conocimiento compartido.</p>
+                    <span class="citation">Figura Clave: Linus Torvalds (Creador de Linux).</span>
+                </div>
+            </div>
+
+            <!-- Modern -->
+            <div class="timeline-card left">
+                <div class="content-box">
+                    <span class="year-tag">Siglo XXI</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Codigo+Python+IA" alt="Python Code"
+                        class="person-img">
+                    <h3>La Era Moderna e IA</h3>
+                    <p>Lenguajes como <strong>Python</strong> dominan por su simplicidad y potencia en IA. Hoy,
+                        herramientas como <strong>GitHub Copilot</strong> (basada en OpenAI Codex) asisten a los
+                        programadores, cerrando el círculo: la IA ahora ayuda a escribir el software que la creó.</p>
+                    <span class="citation">Tecnologías: Python, Rust, LLMs.</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Museo Virtual de Robótica e IA.</p>
+    </footer>
+</body>
+
+</html>

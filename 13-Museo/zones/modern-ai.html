@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robótica Moderna e IA - Museo Virtual</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .modern-ai-hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            text-align: center;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            box-shadow: 0 0 30px rgba(37, 99, 235, 0.2);
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .tech-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .tech-header {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(30, 41, 59, 0.5));
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .tech-icon {
+            font-size: 2.5rem;
+        }
+
+        .tech-title {
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            font-size: 1.4rem;
+        }
+
+        .tech-body {
+            padding: 2rem;
+            color: #cbd5e1;
+        }
+
+        .tech-body h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .tech-stat {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Robótica Moderna e IA</h1>
+        <p class="subtitle">La Frontera de lo Posible</p>
+        <a href="../index.html" class="btn-explore" style="margin-top: 1rem;">← Volver al Mapa</a>
+    </header>
+
+    <main>
+        <section class="modern-ai-hero">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: #fff;">El Presente es Ciencia Ficción</h2>
+            <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; color: #e2e8f0;">
+                Vivimos en una era donde las máquinas no solo ejecutan órdenes, sino que aprenden, se adaptan y crean.
+                Descubre a los protagonistas de esta revolución tecnológica.
+            </p>
+        </section>
+
+        <div class="showcase-grid">
+            <!-- Boston Dynamics -->
+            <article class="tech-card">
+                <div class="tech-header">
+                    <span class="tech-icon">🐕</span>
+                    <h3 class="tech-title">Boston Dynamics</h3>
+                </div>
+                <div class="tech-body">
+                    <p>Famosos por desafiar los límites de la movilidad robótica. Sus robots imitan la biología para
+                        navegar terrenos complejos.</p>
+                    <br>
+                    <h4>Atlas</h4>
+                    <p>El humanoide más ágil del mundo. Capaz de realizar parkour, volteretas y manipular objetos
+                        pesados con equilibrio dinámico.</p>
+                    <br>
+                    <h4>Spot</h4>
+                    <p>Un cuadrúpedo versátil utilizado para inspección industrial, seguridad y exploración en zonas
+                        peligrosas.</p>
+                    <span class="tech-stat">Movilidad Dinámica</span>
+                </div>
+            </article>
+
+            <!-- Generative AI -->
+            <article class="tech-card">
+                <div class="tech-header">
+                    <span class="tech-icon">🧠</span>
+                    <h3 class="tech-title">IA Generativa</h3>
+                </div>
+                <div class="tech-body">
+                    <p>Sistemas capaces de crear contenido nuevo y original, desde texto y código hasta arte y música
+                        indistinguibles de obras humanas.</p>
+                    <br>
+                    <h4>LLMs (GPT-4, Claude)</h4>
+                    <p>Modelos entrenados con vastas cantidades de texto para razonar, resumir y asistir en tareas
+                        complejas.</p>
+                    <br>
+                    <h4>Midjourney / DALL-E</h4>
+                    <p>Neural networks que transforman descripciones textuales en imágenes hiperrealistas o artísticas
+                        en segundos.</p>
+                    <span class="tech-stat">Creatividad Artificial</span>
+                </div>
+            </article>
+
+            <!-- Medical Robotics -->
+            <article class="tech-card">
+                <div class="tech-header">
+                    <span class="tech-icon">⚕️</span>
+                    <h3 class="tech-title">Robótica Médica</h3>
+                </div>
+                <div class="tech-body">
+                    <p>Precisión submilimétrica que supera la mano humana, permitiendo procedimientos mínimamente
+                        invasivos.</p>
+                    <br>
+                    <h4>Sistema Da Vinci</h4>
+                    <p>Permite a los cirujanos operar a distancia con visión 3D y controles que filtran el temblor de la
+                        mano.</p>
+                    <br>
+                    <h4>Nanobots (Experimental)</h4>
+                    <p>Robots microscópicos diseñados para navegar por el torrente sanguíneo y atacar células
+                        cancerígenas.</p>
+                    <span class="tech-stat">Precisión Quirúrgica</span>
+                </div>
+            </article>
+
+            <!-- Autonomous Vehicles -->
+            <article class="tech-card">
+                <div class="tech-header">
+                    <span class="tech-icon">🚗</span>
+                    <h3 class="tech-title">Autonomía y Transporte</h3>
+                </div>
+                <div class="tech-body">
+                    <p>La fusión de sensores (LIDAR, cámaras, radar) e IA permite a los vehículos entender y reaccionar
+                        ante el caótico mundo real.</p>
+                    <br>
+                    <h4>Waymo / Tesla FSD</h4>
+                    <p>Flotas de taxis autónomos que ya operan en ciudades como San Francisco y Phoenix sin conductor
+                        humano.</p>
+                    <br>
+                    <h4>Logística con Drones</h4>
+                    <p>Redes de entrega aérea (como Wing o Zipline) que transportan medicinas y paquetes en tiempo
+                        récord.</p>
+                    <span class="tech-stat">Navegación Nivel 4/5</span>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Museo Virtual de Robótica e IA.</p>
+    </footer>
+</body>
+
+</html>

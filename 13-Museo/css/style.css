@@ -1,0 +1,212 @@
+:root {
+    --primary-color: #60a5fa;
+    /* Blue 400 */
+    --primary-dark: #2563eb;
+    /* Blue 600 */
+    --secondary-color: #94a3b8;
+    /* Slate 400 */
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    /* Slate 900 to 800 */
+    --surface-gradient: linear-gradient(180deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.7) 100%);
+    --text-color: #f1f5f9;
+    /* Slate 100 */
+    --text-muted: #cbd5e1;
+    /* Slate 300 */
+    --font-main: 'Orbitron', 'Inter', sans-serif;
+    --glow-shadow: 0 0 15px rgba(37, 99, 235, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    /* Ensures gradient covers full scroll */
+    color: var(--text-color);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Animations */
+@keyframes softPulse {
+
+    0%,
+    100% {
+        text-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+    }
+
+    50% {
+        text-shadow: 0 0 20px rgba(96, 165, 250, 0.8);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Header */
+header {
+    padding: 2.5rem 2rem;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.0));
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background: linear-gradient(to right, #60a5fa, #cbd5e1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    animation: softPulse 4s infinite alternate;
+}
+
+.subtitle {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+/* Main Layout */
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-muted);
+}
+
+/* Zone Grid */
+.zone-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    padding: 2rem 0;
+}
+
+.zone-card {
+    background: var(--surface-gradient);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.zone-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+.zone-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: var(--primary-color);
+}
+
+.zone-card:hover::before {
+    opacity: 1;
+}
+
+.zone-card>* {
+    position: relative;
+    /* Bring content above the ::before pseudo-element */
+    z-index: 1;
+}
+
+.zone-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(96, 165, 250, 0.3));
+}
+
+.zone-title {
+    font-family: 'Orbitron', sans-serif;
+    color: #e2e8f0;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+.zone-desc {
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.btn-explore {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(30, 41, 59, 0.5));
+    border: 1px solid var(--primary-dark);
+    color: var(--primary-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-explore:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem;
+    margin-top: 5rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.1);
+    background: linear-gradient(to top, rgba(15, 23, 42, 1), transparent);
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}

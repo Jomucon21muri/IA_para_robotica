@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia de la IA - Museo Virtual</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            padding: 4rem 0;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            box-shadow: 0 0 15px var(--primary-color);
+        }
+
+        .timeline-card {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-card::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--secondary-color);
+            border: 4px solid var(--bg-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 10px var(--secondary-color);
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid rgba(30, 41, 59, 0.8);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent rgba(30, 41, 59, 0.8);
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid rgba(30, 41, 59, 0.8);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent rgba(30, 41, 59, 0.8) transparent transparent;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .content-box {
+            padding: 20px 30px;
+            background: rgba(30, 41, 59, 0.8);
+            position: relative;
+            border-radius: 15px;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease;
+        }
+
+        .content-box:hover {
+            transform: scale(1.02);
+            border-color: var(--primary-color);
+        }
+
+        .year-tag {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .person-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .citation {
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            font-style: italic;
+            margin-top: 10px;
+            display: block;
+        }
+
+        @media screen and (max-width: 600px) {
+            .timeline-container::after {
+                left: 31px;
+            }
+
+            .timeline-card {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-card::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            .left::after,
+            .right::after {
+                left: 21px;
+            }
+
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Cronografía de la Inteligencia Artificial</h1>
+        <p class="subtitle">La Búsqueda de la Mente Sintética</p>
+        <a href="history-hub.html" class="btn-explore" style="margin-top: 1rem;">← Volver a la Sala Común</a>
+    </header>
+
+    <main>
+        <div class="timeline-container">
+
+            <!-- 1950 -->
+            <div class="timeline-card left">
+                <div class="content-box">
+                    <span class="year-tag">1950</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Alan+Turing" alt="Alan Turing"
+                        class="person-img">
+                    <h3>¿Pueden pensar las máquinas?</h3>
+                    <p><strong>Alan Turing</strong> publicó <em>"Computing Machinery and Intelligence"</em>, proponiendo
+                        el famoso "Juego de la Imitación" (Test de Turing). Argumentó que si una máquina podía conversar
+                        indistinguiblemente de un humano, merecía ser llamada inteligente, desplazando la pregunta de
+                        "pensar" a "actuar".</p>
+                    <span class="citation">Figura Clave: Alan Turing (Padre de la IA).</span>
+                </div>
+            </div>
+
+            <!-- 1956 -->
+            <div class="timeline-card right">
+                <div class="content-box">
+                    <span class="year-tag">1956</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Dartmouth+Conference"
+                        alt="Dartmouth Conference" class="person-img">
+                    <h3>El Nacimiento Oficial</h3>
+                    <p>En el verano de 1956, <strong>John McCarthy</strong>, Marvin Minsky, Nathaniel Rochester y Claude
+                        Shannon organizaron la Conferencia de Dartmouth. Aquí se acuñó el término "Inteligencia
+                        Artificial" y se estableció la premisa de que "cada aspecto del aprendizaje... puede ser
+                        simulado por una máquina".</p>
+                    <span class="citation">Figura Clave: John McCarthy (Creador de Lisp).</span>
+                </div>
+            </div>
+
+            <!-- 1957-1969 -->
+            <div class="timeline-card left">
+                <div class="content-box">
+                    <span class="year-tag">1957 - 1969</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Perceptron+Rosenblatt"
+                        alt="Red Neuronal Temprana" class="person-img">
+                    <h3>Los Años Dorados</h3>
+                    <p>Frank Rosenblatt creó el <strong>Perceptrón</strong>, la primera red neuronal artificial.
+                        Programas como ELIZA (Joseph Weizenbaum) simulaban psicoterapia. Parecía que la IA de nivel
+                        humano estaba a la vuelta de la esquina, impulsada por un optimismo desbordante y financiación
+                        de DARPA.</p>
+                    <span class="citation">Figura Clave: Frank Rosenblatt.</span>
+                </div>
+            </div>
+
+            <!-- 1974 -->
+            <div class="timeline-card right">
+                <div class="content-box">
+                    <span class="year-tag">1974 - 1980</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=AI+Winter" alt="Invierno IA"
+                        class="person-img">
+                    <h3>El Primer Invierno de la IA</h3>
+                    <p>Las promesas exageradas chocaron con la realidad: la capacidad de cómputo era ínfima y el sentido
+                        común inaprehensible para la lógica simbólica. Los gobiernos cortaron la financiación y la
+                        investigación en IA se estancó dramáticamente.</p>
+                    <span class="citation">Concepto: La "Maldición de la Dimensionalidad".</span>
+                </div>
+            </div>
+
+            <!-- 1980s -->
+            <div class="timeline-card left">
+                <div class="content-box">
+                    <span class="year-tag">1980s</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Expert+Systems" alt="Sistemas Expertos"
+                        class="person-img">
+                    <h3>Sistemas Expertos y Renacimiento</h3>
+                    <p>La industria adoptó los <strong>Sistemas Expertos</strong> (como MYCIN o XCON), programas que
+                        codificaban reglas de "si-entonces" de expertos humanos. Fue la primera vez que la IA generó
+                        valor comercial real, ahorrando millones a empresas como DEC.</p>
+                    <span class="citation">Figura Clave: Edward Feigenbaum.</span>
+                </div>
+            </div>
+
+            <!-- 1997 -->
+            <div class="timeline-card right">
+                <div class="content-box">
+                    <span class="year-tag">1997</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Deep+Blue+vs+Kasparov" alt="Deep Blue"
+                        class="person-img">
+                    <h3>La Máquina Vence al Gran Maestro</h3>
+                    <p><strong>Deep Blue</strong> de IBM derrotó al campeón mundial de ajedrez Garry Kasparov. Aunque
+                        usaba fuerza bruta y no "aprendizaje" real, fue un hito mediático que demostró que las máquinas
+                        podían superar a los humanos en tareas intelectuales complejas.</p>
+                    <span class="citation">Hito: IBM Deep Blue.</span>
+                </div>
+            </div>
+
+            <!-- 2012 -->
+            <div class="timeline-card left">
+                <div class="content-box">
+                    <span class="year-tag">2012 - Presente</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Deep+Learning+Neural+Net"
+                        alt="Red Neuronal Profunda" class="person-img">
+                    <h3>La Revolución del Deep Learning</h3>
+                    <p>Geoffrey Hinton y su equipo ganaron el concurso ImageNet usando <strong>Redes Neuronales
+                            Convolucionales (CNN)</strong>. El poder de las GPUs y el Big Data permitió entrenar redes
+                        profundas, superando a los humanos en visión por computadora, reconocimiento de voz y Go
+                        (AlphaGo).</p>
+                    <span class="citation">Figuras Clave: Hinton, LeCun, Bengio (Padres del Deep Learning).</span>
+                </div>
+            </div>
+
+            <!-- 2023 -->
+            <div class="timeline-card right">
+                <div class="content-box">
+                    <span class="year-tag">2023+</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Generative+AI+GPT" alt="IA Generativa"
+                        class="person-img">
+                    <h3>La Era Generativa y la AGI</h3>
+                    <p>Modelos como <strong>GPT-4, Claude y Gemini</strong> han roto la barrera de la creatividad y el
+                        razonamiento general. La discusión ha pasado de "¿puede una máquina jugar ajedrez?" a la
+                        seguridad de la IA, la alineación y la búsqueda de la Inteligencia Artificial General (AGI).</p>
+                    <span class="citation">Hito: ChatGPT y Modelos Fundacionales.</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Museo Virtual de Robótica e IA.</p>
+    </footer>
+</body>
+
+</html>

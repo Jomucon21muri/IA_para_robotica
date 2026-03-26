@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia de la Electrónica - Museo Virtual</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            padding: 4rem 0;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            box-shadow: 0 0 15px var(--primary-color);
+        }
+
+        .timeline-card {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-card::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--secondary-color);
+            border: 4px solid var(--bg-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 10px var(--secondary-color);
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid rgba(30, 41, 59, 0.8);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent rgba(30, 41, 59, 0.8);
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid rgba(30, 41, 59, 0.8);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent rgba(30, 41, 59, 0.8) transparent transparent;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .content-box {
+            padding: 20px 30px;
+            background: rgba(30, 41, 59, 0.8);
+            position: relative;
+            border-radius: 15px;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease;
+        }
+
+        .content-box:hover {
+            transform: scale(1.02);
+            border-color: var(--primary-color);
+        }
+
+        .year-tag {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .person-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .citation {
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            font-style: italic;
+            margin-top: 10px;
+            display: block;
+        }
+
+        @media screen and (max-width: 600px) {
+            .timeline-container::after {
+                left: 31px;
+            }
+
+            .timeline-card {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-card::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            .left::after,
+            .right::after {
+                left: 21px;
+            }
+
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Cronografía de la Electrónica</h1>
+        <p class="subtitle">La Chispa que Encendió el Mundo Digital</p>
+        <a href="history-hub.html" class="btn-explore" style="margin-top: 1rem;">← Volver a la Sala Común</a>
+    </header>
+
+    <main>
+        <div class="timeline-container">
+
+            <!-- 600 BC -->
+            <div class="timeline-card left">
+                <div class="content-box">
+                    <span class="year-tag">600 a.C.</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Tales+de+Mileto" alt="Tales de Mileto"
+                        class="person-img">
+                    <h3>El Ámbar y el Frotamiento</h3>
+                    <p><strong>Tales de Mileto</strong> observó que al frotar ámbar (en griego <em>elektron</em>) con
+                        piel de gato, este atraía plumas y paja. Fue el primer estudio documentado de la electricidad
+                        estática, sentando la base etimológica y conceptual de toda la disciplina.</p>
+                    <span class="citation">Figura Clave: Tales de Mileto (Filósofo Griego).</span>
+                </div>
+            </div>
+
+            <!-- 1800 -->
+            <div class="timeline-card right">
+                <div class="content-box">
+                    <span class="year-tag">1800</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Alessandro+Volta" alt="Pila Voltaica"
+                        class="person-img">
+                    <h3>La Corriente Continua</h3>
+                    <p><strong>Alessandro Volta</strong> inventó la primera batería química, la "Pila Voltaica",
+                        demostrando que la electricidad podía fluir de manera constante y controlada, a diferencia de
+                        las chispas estáticas. Esto permitió el estudio profundo del electromagnetismo.</p>
+                    <span class="citation">Figura Clave: Alessandro Volta (Físico Italiano).</span>
+                </div>
+            </div>
+
+            <!-- 1831 -->
+            <div class="timeline-card left">
+                <div class="content-box">
+                    <span class="year-tag">1831</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Michael+Faraday" alt="Induccion Faraday"
+                        class="person-img">
+                    <h3>Inducción Electromagnética</h3>
+                    <p><strong>Michael Faraday</strong> descubrió que un campo magnético variable induce una corriente
+                        eléctrica. Este principio es la base de todos los generadores, transformadores y motores
+                        eléctricos modernos, uniendo electricidad y magnetismo en una sola fuerza.</p>
+                    <span class="citation">Figura Clave: Michael Faraday (Físico Experimental).</span>
+                </div>
+            </div>
+
+            <!-- 1904 -->
+            <div class="timeline-card right">
+                <div class="content-box">
+                    <span class="year-tag">1904 - 1906</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Tubos+de+Vacio" alt="Triodo De Forest"
+                        class="person-img">
+                    <h3>La Era del Vacío</h3>
+                    <p><strong>John Ambrose Fleming</strong> inventó el diodo de vacío y <strong>Lee De Forest</strong>
+                        el triodo (Audion). Estos dispositivos permitieron por primera vez <em>controlar</em> y
+                        <em>amplificar</em> señales eléctricas, dando nacimiento a la radio, la televisión y las
+                        primeras computadoras (ENIAC).</p>
+                    <span class="citation">Figuras Clave: Fleming y De Forest (Padres de la Electrónica Activa).</span>
+                </div>
+            </div>
+
+            <!-- 1947 -->
+            <div class="timeline-card left">
+                <div class="content-box">
+                    <span class="year-tag">1947</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=El+Transistor+Bell+Labs"
+                        alt="Primer Transistor" class="person-img">
+                    <h3>El Invento del Siglo</h3>
+                    <p>En los Laboratorios Bell, <strong>Bardeen, Brattain y Shockley</strong> crearon el
+                        <strong>transistor</strong> de contacto puntual. Reemplazó a las válvulas de vacío por
+                        materiales semiconductores (germanio/silicio), siendo infinitamente más pequeño, duradero y
+                        eficiente.</p>
+                    <span class="citation">Figuras Clave: Premios Nobel de Bell Labs.</span>
+                </div>
+            </div>
+
+            <!-- 1958 -->
+            <div class="timeline-card right">
+                <div class="content-box">
+                    <span class="year-tag">1958</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Circuito+Integrado+Kilby"
+                        alt="Chip Jack Kilby" class="person-img">
+                    <h3>El Microchip</h3>
+                    <p><strong>Jack Kilby</strong> (Texas Instruments) y <strong>Robert Noyce</strong> (Fairchild)
+                        descubrieron independientemente cómo fabricar múltiples componentes (resistencias,
+                        condensadores, transistores) en una sola oblea de silicio. Había nacido el Circuito Integrado
+                        (IC).</p>
+                    <span class="citation">Figura Clave: Jack Kilby (Ingeniero).</span>
+                </div>
+            </div>
+
+            <!-- 1971 -->
+            <div class="timeline-card left">
+                <div class="content-box">
+                    <span class="year-tag">1971</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Intel+4004+Microprocesador"
+                        alt="Intel 4004" class="person-img">
+                    <h3>El Cerebro en un Chip</h3>
+                    <p>Intel lanzó el <strong>4004</strong>, el primer microprocesador comercial. Diseñado por
+                        <strong>Federico Faggin</strong> y Ted Hoff, contenía 2,300 transistores y ejecutaba
+                        instrucciones lógicas, convirtiendo la electrónica en verdadera computación programable.</p>
+                    <span class="citation">Figura Clave: Federico Faggin (Diseñador de Chips).</span>
+                </div>
+            </div>
+
+            <!-- Modern -->
+            <div class="timeline-card right">
+                <div class="content-box">
+                    <span class="year-tag">Siglo XXI</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Wafer+de+Silicio+Moderno"
+                        alt="Chip Moderno" class="person-img">
+                    <h3>La Ley de Moore y Más Allá</h3>
+                    <p>Hoy, chips como los <strong>GPUs NVIDIA H100</strong> contienen más de 80 mil millones de
+                        transistores. Nos acercamos a los límites físicos del silicio (3nm) y exploramos la computación
+                        cuántica y la fotónica para continuar la evolución.</p>
+                    <span class="citation">Tecnologías: GPU, TPU, Qubit.</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Museo Virtual de Robótica e IA.</p>
+    </footer>
+</body>
+
+</html>

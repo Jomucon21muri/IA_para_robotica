@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia de la Robótica - Museo Virtual</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            padding: 4rem 0;
+        }
+
+        /* The vertical line */
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            box-shadow: 0 0 15px var(--primary-color);
+        }
+
+        .timeline-card {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-card::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--secondary-color);
+            border: 4px solid var(--bg-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 10px var(--secondary-color);
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid rgba(30, 41, 59, 0.8);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent rgba(30, 41, 59, 0.8);
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid rgba(30, 41, 59, 0.8);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent rgba(30, 41, 59, 0.8) transparent transparent;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .content-box {
+            padding: 20px 30px;
+            background: rgba(30, 41, 59, 0.8);
+            position: relative;
+            border-radius: 15px;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease;
+        }
+
+        .content-box:hover {
+            transform: scale(1.02);
+            border-color: var(--primary-color);
+        }
+
+        .year-tag {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .person-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .citation {
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            font-style: italic;
+            margin-top: 10px;
+            display: block;
+        }
+
+        @media screen and (max-width: 600px) {
+            .timeline-container::after {
+                left: 31px;
+            }
+
+            .timeline-card {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-card::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            .left::after,
+            .right::after {
+                left: 21px;
+            }
+
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Cronografía de la Robótica</h1>
+        <p class="subtitle">Del Mito a la Máquina Autónoma</p>
+        <a href="history-hub.html" class="btn-explore" style="margin-top: 1rem;">← Volver a la Sala Común</a>
+    </header>
+
+    <main>
+        <div class="timeline-container">
+
+            <!-- 400 BC -->
+            <div class="timeline-card left">
+                <div class="content-box">
+                    <span class="year-tag">400 a.C. - 100 d.C.</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Heron+de+Alejandria"
+                        alt="Grabado de Heron" class="person-img">
+                    <h3>Los Autómatas de la Antigüedad</h3>
+                    <p>La robótica nace del deseo humano de imitar la vida. <strong>Archytas de Tarento</strong>
+                        construyó "La Paloma", un ave de madera propulsada por vapor. Siglos después, <strong>Herón de
+                            Alejandría</strong> documentó mecanismos hidráulicos capaces de moverse por sí mismos en
+                        templos.</p>
+                    <span class="citation">Figura Clave: Herón de Alejandría (Matemático e Ingeniero).</span>
+                </div>
+            </div>
+
+            <!-- 1206 -->
+            <div class="timeline-card right">
+                <div class="content-box">
+                    <span class="year-tag">1206</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Al-Jazari+Automata"
+                        alt="Manuscrito de Al-Jazari" class="person-img">
+                    <h3>La Edad de Oro Islámica</h3>
+                    <p>El ingeniero <strong>Al-Jazari</strong> escribió <em>El Libro del Conocimiento de los
+                            Dispositivos Mecánicos Ingeniosos</em>. Diseñó relojes elefante, camareras automáticas y la
+                        primera banda musical programable mediante levas y clavijas.</p>
+                    <span class="citation">Figura Clave: Ismail al-Jazari (Padre de la robótica moderna
+                        temprana).</span>
+                </div>
+            </div>
+
+            <!-- 1495 -->
+            <div class="timeline-card left">
+                <div class="content-box">
+                    <span class="year-tag">1495</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Caballero+de+Da+Vinci"
+                        alt="Boceto Da Vinci" class="person-img">
+                    <h3>El Caballero Mecánico</h3>
+                    <p>En el Renacimiento, <strong>Leonardo da Vinci</strong> diseñó un autómata con forma de caballero
+                        germánico. Los bocetos, redescubiertos en los años 50, mostraban un sistema de poleas y cables
+                        que permitía al robot sentarse, levantar la visera y mover los brazos.</p>
+                    <span class="citation">Figura Clave: Leonardo da Vinci (Polímata).</span>
+                </div>
+            </div>
+
+            <!-- 1739 -->
+            <div class="timeline-card right">
+                <div class="content-box">
+                    <span class="year-tag">1739</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Pato+de+Vaucanson" alt="Pato Vaucanson"
+                        class="person-img">
+                    <h3>La Simulación Biológica</h3>
+                    <p><strong>Jacques de Vaucanson</strong> creó el "Pato Digestor", un autómata con más de 400 piezas
+                        móviles en cada ala. Era capaz de comer grano, metabolizarlo (químicamente simulado) y defecar,
+                        marcando un hito en la biomímesis mecánica.</p>
+                    <span class="citation">Figura Clave: Jacques de Vaucanson (Inventor).</span>
+                </div>
+            </div>
+
+            <!-- 1920 -->
+            <div class="timeline-card left">
+                <div class="content-box">
+                    <span class="year-tag">1920</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Karel+Capek+R.U.R." alt="Karel Capek"
+                        class="person-img">
+                    <h3>Nace la Palabra "Robot"</h3>
+                    <p>El dramaturgo checo <strong>Karel Čapek</strong> estrenó la obra <em>R.U.R. (Rossum's Universal
+                            Robots)</em>. El término proviene de la palabra checa <em>robota</em> (trabajo forzado). La
+                        obra introdujo el concepto de rebelión de las máquinas.</p>
+                    <span class="citation">Figura Clave: Karel Čapek (Escritor).</span>
+                </div>
+            </div>
+
+            <!-- 1961 -->
+            <div class="timeline-card right">
+                <div class="content-box">
+                    <span class="year-tag">1961</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Unimate+GM" alt="Brazo Unimate"
+                        class="person-img">
+                    <h3>El Primer Robot Industrial</h3>
+                    <p><strong>George Devol</strong> y <strong>Joseph Engelberger</strong> instalaron
+                        <strong>Unimate</strong> en una planta de General Motors. Este brazo hidráulico realizaba tareas
+                        de soldadura por puntos peligrosas para humanos, iniciando la automatización industrial masiva.
+                    </p>
+                    <span class="citation">Figura Clave: Joseph Engelberger (Padre de la Robótica Industrial).</span>
+                </div>
+            </div>
+
+            <!-- 1966 -->
+            <div class="timeline-card left">
+                <div class="content-box">
+                    <span class="year-tag">1966 - 1972</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Shakey+The+Robot" alt="Shakey SRI"
+                        class="person-img">
+                    <h3>La Primera IA Móvil: Shakey</h3>
+                    <p>Desarrollado en SRI International, <strong>Shakey</strong> fue el primer robot móvil capaz de
+                        razonar sobre sus propias acciones. Podía percibir su entorno, planificar rutas y mover objetos.
+                        Introdujo el algoritmo de búsqueda A*.</p>
+                    <span class="citation">Figura Clave: Charles Rosen & Nils Nilsson (Investigadores SRI).</span>
+                </div>
+            </div>
+
+            <!-- 2000s -->
+            <div class="timeline-card right">
+                <div class="content-box">
+                    <span class="year-tag">Siglo XXI</span>
+                    <img src="https://placehold.co/600x300/1e293b/cbd5e1?text=Boston+Dynamics+Spot" alt="Robot Moderno"
+                        class="person-img">
+                    <h3>Era Moderna: Dinámica y Social</h3>
+                    <p>La robótica ha salido de las fábricas. <strong>ASIMO</strong> (Honda) mostró bipedestación
+                        avanzada. <strong>Boston Dynamics</strong> (Marc Raibert) logró equilibrio dinámico en terrenos
+                        no estructurados. Hoy, los drones y cobots coexisten con humanos.</p>
+                    <span class="citation">Figuras Clave: Marc Raibert, Cynthia Breazeal.</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Museo Virtual de Robótica e IA.</p>
+    </footer>
+</body>
+
+</html>
